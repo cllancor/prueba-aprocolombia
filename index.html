@@ -6,57 +6,36 @@
 <title>Acuerdo Comercial · Gambo Creativo × Aprocolombia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-
 <style>
-/* ========================================
-   VARIABLES CSS — SISTEMA DE DISEÑO
-   ======================================== */
 :root {
-  /* Colores principales */
-  --bg-base:       #0A0D0F;
-  --bg-surface:    #111518;
-  --bg-elevated:   #181D22;
-  --bg-card:       #1C2229;
+  --bg-base: #0A0D0F;
+  --bg-surface: #111518;
+  --bg-elevated: #181D22;
+  --bg-card: #1C2229;
   --bg-card-hover: #222A33;
-
-  /* Acentos verdes */
-  --verde-neon:    #39FF8C;
-  --verde-bright:  #2DE078;
-  --verde-mid:     #1BAD5C;
-  --verde-deep:    #0D6E3A;
-  --verde-subtle:  rgba(57, 255, 140, 0.08);
-  --verde-glow:    rgba(57, 255, 140, 0.25);
-
-  /* Texto */
-  --text-primary:  #F0F4F0;
-  --text-secondary:#9FB3A4;
-  --text-muted:    #5C7263;
-  --text-accent:   var(--verde-neon);
-
-  /* Bordes */
+  --verde-neon: #39FF8C;
+  --verde-bright: #2DE078;
+  --verde-mid: #1BAD5C;
+  --verde-deep: #0D6E3A;
+  --verde-subtle: rgba(57, 255, 140, 0.08);
+  --verde-glow: rgba(57, 255, 140, 0.25);
+  --text-primary: #F0F4F0;
+  --text-secondary: #9FB3A4;
+  --text-muted: #5C7263;
+  --text-accent: var(--verde-neon);
   --border-subtle: rgba(57, 255, 140, 0.10);
-  --border-mid:    rgba(57, 255, 140, 0.20);
+  --border-mid: rgba(57, 255, 140, 0.20);
   --border-strong: rgba(57, 255, 140, 0.40);
-
-  /* Espaciado */
-  --section-gap:   96px;
-  --card-radius:   16px;
-  --tag-radius:    20px;
-
-  /* Tipografía */
-  --font-serif:    'Libre Baskerville', serif;
-  --font-sans:     'Source Sans 3', sans-serif;
-
-  /* Sombras */
-  --shadow-card:   0 4px 24px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
-  --shadow-glow:   0 0 40px rgba(57, 255, 140, 0.15);
+  --section-gap: 96px;
+  --card-radius: 16px;
+  --tag-radius: 20px;
+  --font-serif: 'Libre Baskerville', serif;
+  --font-sans: 'Source Sans 3', sans-serif;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
+  --shadow-glow: 0 0 40px rgba(57, 255, 140, 0.15);
 }
 
-/* ========================================
-   RESET & BASE
-   ======================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -67,24 +46,13 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   min-height: 100vh;
-  /* Textura noise sutil */
   background-image:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(57,255,140,0.06) 0%, transparent 60%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
-/* ========================================
-   LAYOUT WRAPPER
-   ======================================== */
-.wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 28px 120px;
-}
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 28px 120px; }
 
-/* ========================================
-   GRID PATTERN — FONDO SUTIL
-   ======================================== */
 .grid-bg {
   position: fixed;
   inset: 0;
@@ -97,9 +65,7 @@ body {
   mask-image: radial-gradient(ellipse 100% 80% at 50% 50%, black 30%, transparent 100%);
 }
 
-/* ========================================
-   HERO SECTION
-   ======================================== */
+/* HERO */
 .hero {
   position: relative;
   padding: 80px 0 60px;
@@ -108,18 +74,14 @@ body {
   transform: translateY(20px);
   animation: fadeSlideUp 0.8s ease forwards 0.1s;
 }
-
 .hero::before {
   content: '';
   position: absolute;
-  top: -60px;
-  left: -80px;
-  width: 500px;
-  height: 400px;
+  top: -60px; left: -80px;
+  width: 500px; height: 400px;
   background: radial-gradient(ellipse, rgba(57,255,140,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
-
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -136,16 +98,13 @@ body {
   margin-bottom: 24px;
   backdrop-filter: blur(8px);
 }
-
 .eyebrow::before {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--verde-neon);
   animation: pulse 2s ease infinite;
 }
-
 .hero h1 {
   font-family: var(--font-serif);
   font-size: clamp(32px, 5vw, 50px);
@@ -155,12 +114,7 @@ body {
   margin-bottom: 20px;
   letter-spacing: -0.5px;
 }
-
-.hero h1 span {
-  color: var(--verde-neon);
-  position: relative;
-}
-
+.hero h1 span { color: var(--verde-neon); }
 .hero-sub {
   font-size: 16px;
   color: var(--text-secondary);
@@ -169,16 +123,13 @@ body {
   line-height: 1.85;
 }
 
-/* ========================================
-   PARTES (beneficios en grid)
-   ======================================== */
+/* PARTES */
 .partes {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   padding: 40px 0 0;
 }
-
 .parte-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -189,7 +140,6 @@ body {
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   cursor: default;
 }
-
 .parte-card::before {
   content: '';
   position: absolute;
@@ -198,108 +148,39 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-.parte-card:hover {
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-card), var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
+.parte-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-card), var(--shadow-glow); transform: translateY(-2px); }
 .parte-card:hover::before { opacity: 1; }
-
-.parte-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--verde-mid);
-  margin-bottom: 10px;
-}
-
-.parte-name {
-  font-family: var(--font-serif);
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-
-.parte-role {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.parte-email {
-  font-size: 12px;
-  color: var(--verde-mid);
-  margin-top: 6px;
-}
-
+.parte-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-mid); margin-bottom: 10px; }
+.parte-name { font-family: var(--font-serif); font-size: 19px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.parte-role { font-size: 13px; color: var(--text-secondary); }
+.parte-email { font-size: 12px; color: var(--verde-mid); margin-top: 6px; }
 .parte-email a { color: inherit; text-decoration: none; }
 .parte-email a:hover { color: var(--verde-neon); }
 
-/* ========================================
-   DIVISOR
-   ======================================== */
+/* DIVISOR */
 hr.div {
   border: none;
   border-top: 1px solid var(--border-subtle);
   margin: var(--section-gap) 0 0;
   position: relative;
 }
-
 hr.div::after {
   content: '';
   position: absolute;
-  top: -1px;
-  left: 0;
-  width: 60px;
-  height: 1px;
+  top: -1px; left: 0;
+  width: 60px; height: 1px;
   background: var(--verde-neon);
   opacity: 0.6;
 }
 
-/* ========================================
-   SECCIONES
-   ======================================== */
-.section {
-  padding: var(--section-gap) 0 0;
-}
+/* SECCIONES */
+.section { padding: var(--section-gap) 0 0; }
+.sec-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-mid); margin-bottom: 10px; }
+.sec-h { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 18px; line-height: 1.2; }
+.sec-body { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
 
-.sec-eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--verde-mid);
-  margin-bottom: 10px;
-}
-
-.sec-h {
-  font-family: var(--font-serif);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 18px;
-  line-height: 1.2;
-}
-
-.sec-body {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.85;
-}
-
-/* ========================================
-   VIDEO CARDS (metodología/pasos)
-   ======================================== */
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 24px;
-}
-
+/* VIDEO CARDS */
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 24px; }
 .video-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -309,58 +190,21 @@ hr.div::after {
   position: relative;
   overflow: hidden;
 }
-
 .video-card::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--verde-neon), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-.video-card:hover {
-  border-color: var(--border-mid);
-  box-shadow: var(--shadow-card);
-  transform: translateY(-3px);
-}
-
+.video-card:hover { border-color: var(--border-mid); box-shadow: var(--shadow-card); transform: translateY(-3px); }
 .video-card:hover::after { opacity: 1; }
-
-.video-num {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--verde-mid);
-  margin-bottom: 10px;
-}
-
-.video-title {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-}
-
-.video-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 16px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-bottom: 16px;
-}
-
+.video-num { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-mid); margin-bottom: 10px; }
+.video-title { font-family: var(--font-serif); font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+.video-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
 .tag {
   font-size: 11px;
   background: var(--verde-subtle);
@@ -371,27 +215,10 @@ hr.div::after {
   font-weight: 500;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
+.tag:hover { background: rgba(57,255,140,0.15); border-color: var(--border-strong); }
+.entrega { font-size: 12px; font-weight: 600; color: var(--verde-mid); display: flex; align-items: center; gap: 6px; }
+.entrega::before { content: '→'; color: var(--verde-neon); }
 
-.tag:hover {
-  background: rgba(57,255,140,0.15);
-  border-color: var(--border-strong);
-}
-
-.entrega {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--verde-mid);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.entrega::before {
-  content: '→';
-  color: var(--verde-neon);
-}
-
-/* Nota de cambios */
 .nota-cambios {
   background: var(--bg-elevated);
   border-left: 3px solid var(--verde-neon);
@@ -402,72 +229,29 @@ hr.div::after {
   color: var(--text-secondary);
   line-height: 1.75;
 }
-
 .nota-cambios strong { color: var(--text-primary); font-weight: 600; }
 
-/* ========================================
-   PRECIO (autoridad/prueba social)
-   ======================================== */
+/* PRECIO */
 .precio-wrap {
   text-align: center;
   padding: var(--section-gap) 0 0;
   position: relative;
 }
-
 .precio-wrap::before {
   content: '';
   position: absolute;
-  top: 80px;
-  left: 50%;
+  top: 80px; left: 50%;
   transform: translateX(-50%);
-  width: 400px;
-  height: 300px;
+  width: 400px; height: 300px;
   background: radial-gradient(ellipse, rgba(57,255,140,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
-
-.precio-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.precio-big {
-  font-family: var(--font-serif);
-  font-size: clamp(52px, 8vw, 72px);
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
+.precio-label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+.precio-big { font-family: var(--font-serif); font-size: clamp(52px, 8vw, 72px); font-weight: 700; color: var(--text-primary); line-height: 1; letter-spacing: -1px; }
 .precio-big span { color: var(--verde-neon); }
-
-.precio-cop {
-  font-size: 18px;
-  color: var(--text-muted);
-  margin-top: 8px;
-  font-weight: 300;
-}
-
-.precio-note {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 8px;
-  font-style: italic;
-}
-
-.pagos-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 500px;
-  margin: 28px auto 0;
-}
-
+.precio-cop { font-size: 18px; color: var(--text-muted); margin-top: 8px; font-weight: 300; }
+.precio-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; font-style: italic; }
+.pagos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 500px; margin: 28px auto 0; }
 .pago-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -475,44 +259,13 @@ hr.div::after {
   padding: 22px 24px;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
+.pago-card:hover { border-color: var(--border-mid); transform: translateY(-2px); }
+.pago-momento { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-mid); margin-bottom: 8px; }
+.pago-val { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--text-primary); }
+.pago-det { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
 
-.pago-card:hover {
-  border-color: var(--border-mid);
-  transform: translateY(-2px);
-}
-
-.pago-momento {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--verde-mid);
-  margin-bottom: 8px;
-}
-
-.pago-val {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.pago-det {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-top: 4px;
-}
-
-/* ========================================
-   BONO CARDS
-   ======================================== */
-.bono-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
+/* BONOS */
+.bono-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
 .bono-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -520,44 +273,17 @@ hr.div::after {
   padding: 24px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
-
-.bono-card:hover {
-  border-color: var(--border-mid);
-  transform: translateY(-2px);
-}
-
+.bono-card:hover { border-color: var(--border-mid); transform: translateY(-2px); }
 .bono-card.featured {
   border-color: var(--border-strong);
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(57,255,140,0.05) 100%);
   box-shadow: var(--shadow-glow);
 }
-
 .bono-card.featured:hover { transform: translateY(-3px); }
-
-.bono-nivel {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--verde-mid);
-  margin-bottom: 8px;
-}
-
-.bono-amt {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-}
-
+.bono-nivel { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-mid); margin-bottom: 8px; }
+.bono-amt { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
 .bono-card.featured .bono-amt { color: var(--verde-neon); }
-
-.bono-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
+.bono-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
 
 .bono-pago-nota {
   background: var(--bg-elevated);
@@ -569,10 +295,8 @@ hr.div::after {
   color: var(--text-secondary);
   line-height: 1.8;
 }
-
 .bono-pago-nota strong { color: var(--text-primary); }
 
-/* V3 Card */
 .v3-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border-mid);
@@ -582,18 +306,14 @@ hr.div::after {
   position: relative;
   overflow: hidden;
 }
-
 .v3-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
+  top: 0; right: 0;
+  width: 200px; height: 200px;
   background: radial-gradient(ellipse, rgba(57,255,140,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
-
 .v3-badge {
   display: inline-block;
   font-size: 10px;
@@ -607,38 +327,12 @@ hr.div::after {
   border-radius: var(--tag-radius);
   margin-bottom: 12px;
 }
+.v3-title { font-family: var(--font-serif); font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+.v3-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+.v3-items { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
 
-.v3-title {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-}
-
-.v3-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.75;
-}
-
-.v3-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 16px;
-}
-
-/* ========================================
-   DERECHOS
-   ======================================== */
-.derechos-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 24px;
-}
-
+/* DERECHOS */
+.derechos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
 .derecho-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -646,77 +340,34 @@ hr.div::after {
   padding: 24px 28px;
   transition: border-color 0.3s ease;
 }
-
 .derecho-card:hover { border-color: var(--border-mid); }
+.derecho-who { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde-mid); margin-bottom: 14px; }
+.derecho-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.derecho-list li { font-size: 13px; color: var(--text-secondary); line-height: 1.65; padding-left: 18px; position: relative; }
+.derecho-list li::before { content: '→'; position: absolute; left: 0; color: var(--verde-neon); font-size: 12px; }
 
-.derecho-who {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--verde-mid);
-  margin-bottom: 14px;
-}
-
-.derecho-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.derecho-list li {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  padding-left: 18px;
-  position: relative;
-}
-
-.derecho-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--verde-neon);
-  font-size: 12px;
-}
-
-/* ========================================
-   CTA FINAL (descarga)
-   ======================================== */
+/* CTA DESCARGA — CORREGIDO: sin position:relative en el contenedor exterior, z-index bien gestionado */
 .descarga-block {
   background: var(--bg-elevated);
   border: 1px solid var(--border-mid);
   border-radius: 20px;
-  padding: 56px 48px;
-  margin-top: var(--section-gap);
+  padding: 40px 48px;
+  margin-top: 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-
 .descarga-block::before {
   content: '';
   position: absolute;
-  top: -80px;
-  left: 50%;
+  top: 0; left: 50%;
   transform: translateX(-50%);
-  width: 500px;
-  height: 400px;
-  background: radial-gradient(ellipse, rgba(57,255,140,0.12) 0%, transparent 70%);
+  width: 500px; height: 100%;
+  background: radial-gradient(ellipse at 50% 30%, rgba(57,255,140,0.10) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
-
-.descarga-block::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  border: 1px solid transparent;
-  background: linear-gradient(var(--bg-elevated), var(--bg-elevated)) padding-box,
-              linear-gradient(135deg, var(--verde-neon), transparent, var(--verde-deep)) border-box;
-  pointer-events: none;
-}
+.descarga-block > * { position: relative; z-index: 1; }
 
 .descarga-label {
   font-size: 11px;
@@ -726,7 +377,6 @@ hr.div::after {
   color: var(--verde-mid);
   margin-bottom: 16px;
 }
-
 .descarga-h {
   font-family: var(--font-serif);
   font-size: clamp(26px, 4vw, 34px);
@@ -735,9 +385,7 @@ hr.div::after {
   line-height: 1.2;
   margin-bottom: 6px;
 }
-
 .descarga-h span { color: var(--verde-neon); }
-
 .descarga-sub {
   font-size: 14px;
   color: var(--text-secondary);
@@ -747,7 +395,6 @@ hr.div::after {
   margin-left: auto;
   margin-right: auto;
 }
-
 .btn-descarga {
   display: inline-flex;
   align-items: center;
@@ -765,103 +412,37 @@ hr.div::after {
   margin-top: 28px;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
-
-.btn-descarga:hover {
-  background: #5AFFA8;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(57, 255, 140, 0.4);
-}
-
+.btn-descarga:hover { background: #5AFFA8; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(57, 255, 140, 0.4); }
 .btn-descarga:active { transform: translateY(0); }
+.btn-descarga svg { width: 18px; height: 18px; flex-shrink: 0; }
+.descarga-meta { font-size: 11px; color: var(--text-muted); margin-top: 16px; letter-spacing: 0.04em; }
 
-.btn-descarga svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
+/* FOOTER */
+.footer { text-align: center; padding: 48px 0 0; font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; }
 
-.descarga-meta {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 16px;
-  letter-spacing: 0.04em;
-}
+/* ANIMACIONES */
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
 
-/* ========================================
-   FOOTER
-   ======================================== */
-.footer {
-  text-align: center;
-  padding: 48px 0 0;
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-}
-
-/* ========================================
-   ANIMACIONES
-   ======================================== */
-@keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.8); }
-}
-
-/* Scroll animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
-/* ========================================
-   GLASSMORPHISM EFFECTS
-   ======================================== */
-.glass {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
+/* RESPONSIVE */
 @media (max-width: 640px) {
   :root { --section-gap: 64px; }
-
-  .partes,
-  .video-grid,
-  .bono-grid,
-  .pagos-grid,
-  .derechos-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .partes, .video-grid, .bono-grid, .pagos-grid, .derechos-grid { grid-template-columns: 1fr; }
   .hero { padding: 60px 0 48px; }
   .hero h1 { font-size: 30px; }
   .precio-big { font-size: 44px; }
   .descarga-block { padding: 36px 24px; }
   .descarga-h { font-size: 24px; }
 }
-
-@media (max-width: 420px) {
-  .wrap { padding: 0 16px 80px; }
-}
+@media (max-width: 420px) { .wrap { padding: 0 16px 80px; } }
 </style>
 </head>
 <body>
@@ -870,30 +451,32 @@ hr.div::after {
 
 <div class="wrap">
 
+  <!-- HERO -->
   <div class="hero">
     <div class="eyebrow">Acuerdo comercial · 2026</div>
     <h1>Producción audiovisual<br>para <span>Aprocolombia</span></h1>
     <p class="hero-sub">Este acuerdo establece las condiciones de trabajo entre Gambo Creativo y Michael Bobadilla para la creación de contenido audiovisual orientado a mostrar la labor de Aprocolombia en la formalización de recicladores, dignificar su trabajo y presentar la empresa ante alcaldías y entidades públicas.</p>
   </div>
 
+  <!-- PARTES -->
   <div class="partes reveal">
     <div class="parte-card">
       <div class="parte-label">Parte A</div>
-      <div class="parte-name">Jorge Ordoñez</div>
+      <div class="parte-name">Jorge Gamboa</div>
       <div class="parte-role">Gambo Creativo · Productor audiovisual</div>
-      <div class="parte-email"><a href="mailto:gambojao198@gmail.com">gambojao198@gmail.com</a></div>
+      <div class="parte-email"><a href="mailto:gambocreativo@gmail.com">gambocreativo@gmail.com</a></div>
       <div class="parte-role" style="margin-top:4px;">@gambocreativo</div>
     </div>
     <div class="parte-card">
       <div class="parte-label">Parte B</div>
       <div class="parte-name">Michael Bobadilla</div>
       <div class="parte-role">Asesor · Aprocolombia</div>
-      <div class="parte-role" style="margin-top:4px;">@ejecutivo02</div>
     </div>
   </div>
 
   <hr class="div">
 
+  <!-- ALCANCE -->
   <div class="section reveal">
     <div class="sec-eyebrow">Alcance del proyecto</div>
     <div class="sec-h">2 videos principales</div>
@@ -931,6 +514,7 @@ hr.div::after {
 
   <hr class="div">
 
+  <!-- PRECIO -->
   <div class="precio-wrap reveal">
     <div class="precio-label">Valor total del proyecto</div>
     <div class="precio-big"><span>$4.000.000</span></div>
@@ -952,11 +536,11 @@ hr.div::after {
 
   <hr class="div">
 
+  <!-- BONOS -->
   <div class="section reveal">
     <div class="sec-eyebrow">Bono por cierre de contratos</div>
     <div class="sec-h">Reconocimiento adicional si se cierran negocios</div>
     <p class="sec-body">Si el contenido producido por Gambo Creativo ayuda a cerrar contratos con alcaldías u otras entidades públicas, se reconoce un bono adicional. Su valor no se calcula sobre utilidades, sino como un rango fijo proporcional y justo, que varía según el nivel de participación de Gambo Creativo en el proceso de cierre.</p>
-
     <div class="bono-grid">
       <div class="bono-card reveal reveal-delay-1">
         <div class="bono-nivel">Nivel 1</div>
@@ -974,11 +558,9 @@ hr.div::after {
         <div class="bono-desc">Participación activa en reuniones, gestión de contactos, seguimiento y acompañamiento directo en el cierre del negocio.</div>
       </div>
     </div>
-
     <div class="bono-pago-nota reveal">
       <strong>Forma de pago del bono:</strong> independientemente del nivel que aplique, el pago se divide en dos partes iguales — el <strong>50% se paga cuando el contrato esté firmado</strong>, y el <strong>50% restante al entregar el tercer video</strong> relacionado con ese contrato.
     </div>
-
     <div class="v3-card reveal">
       <div class="v3-badge">Incluido en el bono</div>
       <div class="v3-title">Tercer video: registro del impacto</div>
@@ -995,6 +577,7 @@ hr.div::after {
 
   <hr class="div">
 
+  <!-- DERECHOS -->
   <div class="section reveal">
     <div class="sec-eyebrow">Derechos de uso</div>
     <div class="sec-h">Visibilidad mutua</div>
@@ -1019,6 +602,7 @@ hr.div::after {
     </div>
   </div>
 
+  <!-- DESCARGA -->
   <div class="descarga-block reveal">
     <div class="descarga-label">Documento listo para firmar</div>
     <div class="descarga-h">Descarga el contrato<br><span>y fírmalo.</span></div>
@@ -1034,96 +618,47 @@ hr.div::after {
     <div class="descarga-meta">PDF · 3 páginas · Portada + cláusulas + bloques de firma · Documento confidencial</div>
   </div>
 
-  <div class="footer">Documento confidencial · Solo para las partes firmantes · Gambo Creativo ©️ 2026</div>
+  <div class="footer">Documento confidencial · Solo para las partes firmantes · Gambo Creativo © 2026</div>
 
-</div><script>
-/* ========================================
-   SCROLL ANIMATIONS — IntersectionObserver
-   ======================================== */
+</div>
+
+<script>
 (function() {
   'use strict';
 
+  // SCROLL ANIMATIONS
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // No unobserve — allow re-trigger if needed, but once is fine
           observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px'
-    }
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
   );
-
-  // Observe all reveal elements
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ----------------------------------------
-     PARALLAX LIGERO EN FONDOS
-     ---------------------------------------- */
-  const heroBefore = document.querySelector('.hero::before');
+  // PARALLAX SUTIL — CORREGIDO: template literal correcto
   let ticking = false;
-
   function onScroll() {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(function() {
         const scrollY = window.scrollY;
-        // Parallax sutil en grid background
         const gridBg = document.querySelector('.grid-bg');
         if (gridBg) {
-          gridBg.style.transform = `translateY(${scrollY * 0.15}px)`;
+          gridBg.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
         }
         ticking = false;
       });
       ticking = true;
     }
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ----------------------------------------
-     DESCARGA PDF (CORREGIDA)
-     ---------------------------------------- */
-  const PDF_B64 = "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";
-
-  const btn = document.getElementById('btnDescarga');
-  if (btn) {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      if (!PDF_B64) {
-        alert('PDF no disponible en esta versión de plantilla.');
-        return;
-      }
-      try {
-        const byteChars = atob(PDF_B64);
-        const byteNumbers = new Uint8Array(byteChars.length);
-        for (let i = 0; i < byteChars.length; i++) {
-          byteNumbers[i] = byteChars.charCodeAt(i);
-        }
-        const blob = new Blob([byteNumbers], { type: 'application/pdf' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Acuerdo-Comercial-Gambo-Aprocolombia.pdf';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      } catch (err) {
-        console.error('Error al descargar PDF:', err);
-        alert('Hubo un problema al generar la descarga.');
-      }
-    });
-  }
-
-  /* ----------------------------------------
-     HOVER GLOW DINÁMICO EN CARDS
-     ---------------------------------------- */
-  document.querySelectorAll('.video-card, .parte-card, .bono-card').forEach(card => {
+  // HOVER GLOW DINÁMICO EN CARDS
+  document.querySelectorAll('.video-card, .parte-card, .bono-card').forEach(function(card) {
     card.addEventListener('mousemove', function(e) {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -1132,6 +667,149 @@ hr.div::after {
       card.style.setProperty('--mouse-y', y + 'px');
     });
   });
+
+  // DESCARGA PDF — genera un PDF básico con el contenido del acuerdo
+  const btn = document.getElementById('btnDescarga');
+  if (btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Generar página para imprimir / guardar como PDF
+      const printWindow = window.open('', '_blank');
+      if (!printWindow) {
+        alert('Activa las ventanas emergentes para descargar el PDF.');
+        return;
+      }
+      printWindow.document.write(`<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Acuerdo Comercial · Gambo Creativo × Aprocolombia</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans 3', sans-serif; color: #1a1a1a; background: #fff; padding: 0; }
+  .page { max-width: 720px; margin: 0 auto; padding: 60px 48px; }
+  h1 { font-family: 'Libre Baskerville', serif; font-size: 28px; margin-bottom: 6px; }
+  h2 { font-family: 'Libre Baskerville', serif; font-size: 20px; margin: 32px 0 10px; border-bottom: 2px solid #39FF8C; padding-bottom: 6px; }
+  .label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0D6E3A; margin-bottom: 4px; }
+  p, li { font-size: 13px; line-height: 1.75; color: #333; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px 20px; }
+  ul { padding-left: 18px; margin-top: 8px; }
+  ul li { margin-bottom: 4px; }
+  .firma-bloque { margin-top: 48px; }
+  .firma-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+  .firma-box { border-top: 2px solid #1a1a1a; padding-top: 12px; }
+  .firma-name { font-weight: 700; font-size: 14px; margin-top: 40px; }
+  .firma-role { font-size: 12px; color: #666; }
+  .fecha { font-size: 12px; margin-top: 8px; color: #999; }
+  .confidencial { font-size: 10px; color: #999; text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 12px; letter-spacing: 0.08em; }
+  .header-doc { background: #0A0D0F; color: #39FF8C; padding: 32px 48px; margin-bottom: 0; }
+  .header-doc .sub { color: #9FB3A4; font-size: 13px; margin-top: 4px; }
+  @media print { body { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="header-doc">
+  <div class="label" style="color:#1BAD5C;">Acuerdo comercial · 2026</div>
+  <h1 style="color:#F0F4F0;">Producción audiovisual<br>para Aprocolombia</h1>
+  <div class="sub">Documento confidencial · Solo para las partes firmantes</div>
+</div>
+<div class="page">
+  <h2>Partes del acuerdo</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="label">Parte A</div>
+      <strong>Jorge Gamboa</strong><br>
+      <span style="font-size:12px;color:#555;">Gambo Creativo · Productor audiovisual</span><br>
+      <span style="font-size:12px;color:#0D6E3A;">gambocreativo@gmail.com · @gambocreativo</span>
+    </div>
+    <div class="card">
+      <div class="label">Parte B</div>
+      <strong>Michael Bobadilla</strong><br>
+      <span style="font-size:12px;color:#555;">Asesor · Aprocolombia</span>
+    </div>
+  </div>
+
+  <h2>Objeto del acuerdo</h2>
+  <p>El presente acuerdo establece los términos para la creación de contenido audiovisual con los siguientes propósitos:</p>
+  <ul>
+    <li>Mostrar la labor de Aprocolombia en la formalización de recicladores.</li>
+    <li>Dignificar el trabajo de los recicladores y visibilizar su impacto social.</li>
+    <li>Presentar a Aprocolombia ante alcaldías y entidades públicas de manera profesional y estratégica.</li>
+  </ul>
+
+  <h2>Alcance — 2 videos principales</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="label">Video 01</div>
+      <strong>Pieza emocional / visceral</strong>
+      <p style="margin-top:6px;">Enfoque cinematográfico. Planos tipo cine, voz en off, música. Grabación Bogotá + Pitalito. Versiones vertical y horizontal.</p>
+      <p style="margin-top:8px;font-weight:600;color:#0D6E3A;">Entrega: máx. 1 semana tras grabación</p>
+    </div>
+    <div class="card">
+      <div class="label">Video 02</div>
+      <strong>Video institucional / corporativo</strong>
+      <p style="margin-top:6px;">Formalización, carnetización, rutas, vehículos eléctricos y organización municipal. Versiones vertical y horizontal.</p>
+      <p style="margin-top:8px;font-weight:600;color:#0D6E3A;">Entrega: máx. 10 días tras grabación</p>
+    </div>
+  </div>
+  <p style="margin-top:12px;"><strong>Rondas de cambios:</strong> cada video incluye máximo 2 rondas. Modificaciones adicionales se cotizan aparte.</p>
+
+  <h2>Valor total del proyecto</h2>
+  <p style="font-size:22px;font-weight:700;font-family:'Libre Baskerville',serif;">$4.000.000 COP</p>
+  <p style="margin-top:4px;font-size:12px;color:#777;">No incluye IVA, retención en la fuente ni otros descuentos.</p>
+  <div class="grid" style="margin-top:12px;">
+    <div class="card"><div class="label">Al iniciar</div><strong>$2.000.000</strong><p>50% al firmar el acuerdo</p></div>
+    <div class="card"><div class="label">Al entregar</div><strong>$2.000.000</strong><p>50% al recibir los 2 videos finales</p></div>
+  </div>
+
+  <h2>Bono por cierre de contratos</h2>
+  <p>Si el contenido ayuda a cerrar contratos con alcaldías u entidades públicas, se reconoce un bono adicional según el nivel de participación:</p>
+  <div class="grid" style="margin-top:12px;grid-template-columns:1fr 1fr 1fr;">
+    <div class="card"><div class="label">Nivel 1</div><strong>$2.000.000</strong><p>Solo producción de videos</p></div>
+    <div class="card" style="border-color:#39FF8C;"><div class="label">Nivel 2</div><strong>$4.000.000</strong><p>Videos + contactos/reuniones</p></div>
+    <div class="card"><div class="label">Nivel 3</div><strong>$6.000.000</strong><p>Acompañamiento activo en cierre</p></div>
+  </div>
+  <p style="margin-top:12px;"><strong>Pago del bono:</strong> 50% al firmar el contrato con la entidad · 50% al entregar el tercer video.</p>
+
+  <h2>Derechos de uso</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="label">Aprocolombia puede</div>
+      <ul><li>Usar los videos en sus redes sociales</li><li>Incluirlos en presentaciones</li><li>Utilizarlos en propuestas comerciales</li></ul>
+    </div>
+    <div class="card">
+      <div class="label">Gambo Creativo conserva</div>
+      <ul><li>Publicar los videos en sus redes</li><li>Mostrar el proyecto en su portafolio</li><li>Usar fragmentos como caso de éxito</li></ul>
+    </div>
+  </div>
+
+  <div class="firma-bloque">
+    <h2>Aceptación y firmas</h2>
+    <p>Al firmar el presente documento, ambas partes declaran haber leído, comprendido y aceptado en su totalidad las condiciones establecidas en este acuerdo comercial.</p>
+    <div class="firma-grid">
+      <div class="firma-box">
+        <div class="firma-name">Jorge Gamboa</div>
+        <div class="firma-role">Gambo Creativo · Productor audiovisual</div>
+        <div class="fecha">Fecha: _____ / _____ / _______</div>
+      </div>
+      <div class="firma-box">
+        <div class="firma-name">Michael Bobadilla</div>
+        <div class="firma-role">Asesor · Aprocolombia</div>
+        <div class="fecha">Fecha: _____ / _____ / _______</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="confidencial">Documento confidencial · Solo para las partes firmantes · Gambo Creativo © 2026</div>
+</div>
+<script>window.onload = function(){ window.print(); }<\/script>
+</body>
+</html>`);
+      printWindow.document.close();
+    });
+  }
 
 })();
 </script>
