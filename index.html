@@ -692,6 +692,7 @@ hr.div::after {
   border-radius: 20px;
   padding: 56px 48px;
   margin-top: var(--section-gap);
+  position: realtive; 
   text-align: center;
   overflow: hidden;
 }
@@ -864,6 +865,22 @@ hr.div::after {
 @media (max-width: 420px) {
   .wrap { padding: 0 16px 80px; }
 }
+
+   /* TODO tu CSS actual arriba */
+
+/* ========================================
+   FIX VISIBILIDAD DESCARGA
+   ======================================== */
+.descarga-block::before,
+.descarga-block::after {
+  z-index: 0;
+}
+
+.descarga-block > * {
+  position: relative;
+  z-index: 2;
+}
+
 </style>
 </head>
 <body>
